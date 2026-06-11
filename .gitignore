@@ -1,18 +1,30 @@
-# Environment secrets
+# Secrets
 .env
 *.env
-
-# Terraform secret variables
 terraform.tfvars
+**/terraform.tfvars
+*.tfvars
+*.tfvars.json
+
+# Generated AI/Terraform variables
 *.auto.tfvars
 *.auto.tfvars.json
+**/*.auto.tfvars
+**/*.auto.tfvars.json
 
 # Terraform local files/state
 .terraform/
+**/.terraform/
 terraform.tfstate
 terraform.tfstate.*
+**/terraform.tfstate
+**/terraform.tfstate.*
+
+# Logs and system files
 crash.log
 crash.*.log
+*.log
+desktop.ini
 
-# Keep Terraform provider lock file committed
-!.terraform.lock.hcl
+# Old disabled files
+*.disabled

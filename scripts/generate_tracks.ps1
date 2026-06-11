@@ -89,8 +89,7 @@ $response = Invoke-RestMethod `
 
 $generatedJson = $response.response | ConvertFrom-Json
 
-$generatedJson | ConvertTo-Json -Depth 20 | Set-Content ".\generated.auto.tfvars.json"
-
+$generatedJson | ConvertTo-Json -Depth 20 | Set-Content ".\terraform\generated.auto.tfvars.json"
 Write-Host ""
-Write-Host "Done. AI-generated Terraform variables saved to generated.auto.tfvars.json"
+Write-Host "Done. AI-generated Terraform variables saved to terraform/generated.auto.tfvars.json"
 Write-Host ""
