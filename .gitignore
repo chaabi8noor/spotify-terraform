@@ -1,0 +1,18 @@
+# Environment secrets
+.env
+*.env
+
+# Terraform secret variables
+terraform.tfvars
+*.auto.tfvars
+*.auto.tfvars.json
+
+# Terraform local files/state
+.terraform/
+terraform.tfstate
+terraform.tfstate.*
+crash.log
+crash.*.log
+
+# Keep Terraform provider lock file committed
+!.terraform.lock.hcl
