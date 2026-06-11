@@ -1,0 +1,16 @@
+data "spotify_search_track" "ai_tracks" {
+  for_each = var.track_queries
+
+  artist = each.value.artist
+  name   = each.value.name
+}
+
+resource "spotify_playlist" "mix" {
+  name        = "AI Generated Mix"
+  description = "A Spotify playlist generated from AI preferences and managed with Terraform"
+  public      = false
+
+  tracks = [
+    for track in data.spotify_search_track.ai_tracks : track.tracks[0].id
+  ]
+}
